@@ -10,7 +10,7 @@ const usersMap = props => {
     }
 
     return (
-        <MapView style={styles.map}
+        <MapView style={styles.mapContainer}
             initialRegion={{
                 latitude: 13.7567046,
                 longitude: 100.5018897,
@@ -24,9 +24,10 @@ const usersMap = props => {
 };
 
 const styles = StyleSheet.create({
-    map: {
-        width: '100%',
-        height: '100%'
+    mapContainer: {
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
 

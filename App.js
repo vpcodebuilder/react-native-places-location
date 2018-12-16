@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import FetchLocation from './components/FetchLocation';
 import UsersMap from './components/UsersMap';
@@ -24,15 +24,16 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, flexDirection: 'column' }}>
-        <View style={{ flex: 11 }}>
-          <UsersMap userLocation={this.state.userLocation} />
-        </View>
-        
-        <View style={{ flex: 1 }}>
-          <FetchLocation onGetLocation={this.getUserLocationHandler} />
-        </View>
+      <View style={styles.container}>
+        <UsersMap userLocation={this.state.userLocation} />
+        <FetchLocation onGetLocation={this.getUserLocationHandler} />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+})
